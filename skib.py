@@ -19,7 +19,7 @@ def on_press(key):
     global option
     try:
         if key.char in ['1', '2', '3', '4']:
-            option = key.char  # Fixed: removed f-string
+            option = key.char
             return False
     except AttributeError:
         pass
@@ -46,7 +46,7 @@ def menu():
     print("take your chosing")
     
     global option
-    option = None  # Reset option at start
+    option = None
     
     with keyboard.Listener(on_press=on_press) as listener:
         listener.join()
